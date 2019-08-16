@@ -94,3 +94,12 @@
 * Merge a branch with master branch
 - git checkout <name-of-branch>
 - git merge master
+* Update a commited change 
+- Go to commit which needs to be updated
+  - git rebase -i <commit id>^
+  - git rebase -i HEAD~<number of commits>
+- Edit the commit from 'pick' to 'edit'
+- git commit --amend
+  - Make the changes.
+- git rebase --continue
+
