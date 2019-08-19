@@ -1,0 +1,89 @@
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| Package      | Command                                     | Mode             | Description                                                                     |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| try          | M-x try RET some-package                    |                  | Used to try some package without making itconfiguration permanent.              |
+|              | M-x try RET https://url.com/to/some/file.el |                  |                                                                                 |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| which-key    |                                             | which-key-mode   | The mode displays the key bindings following your currently entered             |
+|              |                                             |                  | incomplete command (a prefix) in a popup.                                       |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| org-ac       | M-<tab>                                     | org-mod          | Provide auto-complete sources for org-mode.                                     |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+|              | M-x org-capture                             | org-mode         | Capture lets you quickly store notes.                                           |
+|              | [P] C-c c                                   |                  |                                                                                 |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| htmlize      | M-x htmlize-buffer                          |                  | Converts the buffer text and the associated decorations to HTML.                |
+|              | C-x C-w                                     |                  | To save the buffer and exit converted buffer.                                   |
+|              | M-x htmlize-file                            |                  | To find a file, fontify it, and save the HTML version.                          |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| ace-window   | C-x o                                       |                  | For Switching window ( Works across frames as well )                            |
+|              | [P] M-o                                     |                  | For Switching window                                                            |
+|              | [P] C-x O                                   |                  | For switching frame                                                             |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| org-reveal   | C-c C-e R R                                 | org-mode         | Export files into Reveal.js presentation                                        |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| flycheck     | C-c ! v                                     |                  | To verify if flycheck is running.                                               |
+|              | C-c ! n                                     |                  | To jump back between erroneous places.                                          |
+|              | C-c ! p                                     |                  | To jump forth between erroneous places.                                         |
+|              | C-c ! l                                     |                  | To pop up a list of all errors in the current buffer.                           |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| elpy         | C-c C-c                                     |                  | Evaluates the current python script (or region) in an interactive python shell. |
+|              | C-RET                                       |                  | Evaluates the current statement (current line plus the following nested lines). |
+|              | C-c C-z                                     |                  | Switches between your script and the interactive shell.                         |
+|              | C-c C-d                                     |                  | displays documentation for the thing under cursor.                              |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| yasnippet    | M-x yas-expand                              |                  | Try to expand snippets before point.                                            |
+|              | M-x yas-load-directory                      |                  | Prompts you for a directory hierarchy of snippets to load.                      |
+|              | M-x yas-activate-extra-mode                 |                  | Prompts you for an extra mode to add snippets for in the current buffer.        |
+|              | M-x yas-insert-snippet                      |                  | Prompts you for possible snippet expansion if that is possible according        |
+|              |                                             |                  | to buffer-local and snippet-local expansion conditions.                         |
+|              | M-x yas-visit-snippet-file                  |                  | Prompts you for possible snippet expansions and takes you directly to the       |
+|              |                                             |                  | snippet definition's file                                                       |
+|              | M-x yas-new-snippet                         |                  | Lets you create a new snippet file                                              |
+|              | M-x yas-load-snippet-buffer                 |                  | When editing a snippet, this loads the snippet.                                 |
+|              | C-c C-c                                     | snippet-mode     |                                                                                 |
+|              | M-x yas-tryout-snippet                      |                  | Opens a new empty buffer and inserts the snippet there.                         |
+|              | C-c C-t                                     | snippet-mode     |                                                                                 |
+|              | M-x yas-describe-tables                     |                  | Lists known snippets in a separate buffer.                                      |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| undo-tree    | C-_                                         |                  | Undo changes.                                                                   |
+|              | C-/                                         |                  |                                                                                 |
+|              | M-_                                         |                  | Redo changes.                                                                   |
+|              | C-?                                         |                  |                                                                                 |
+|              | C-x u                                       |                  | Visualize undo tree.                                                            |
+|              | C-x r u                                     |                  | Save current buffer state to register.                                          |
+|              | C-x r U                                     |                  | Restore buffer state from register.                                             |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| iedit        | C-;                                         | iedit-mode       | Mark and edit all copies of the marked region simultaniously                    |
+|              | C-x n                                       |                  | Narrow/Widen region.                                                            |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| dired-narrow | [P] C-c C-n                                 | dired-mode       | dired-narrow                                                                    |
+|              | [P] C-c C-f                                 |                  | dired-narrow-fuzzy                                                              |
+|              | [P] C-x C-N                                 |                  | dired-narrow-regexp                                                             |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| smartparens  | C-M-f                                       | smartparens-mode | sp-forward-sexp                                                                 |
+|              | C-M-b                                       |                  | sp-backward-sexp                                                                |
+|              | C-M-d                                       |                  | sp-down-sexp                                                                    |
+|              | C-M-e                                       |                  | sp-up-sexp                                                                      |
+|              | C-M-k                                       |                  | sp-kill-sexp                                                                    |
+|              | C-M-w                                       |                  | sp-copy-sexp                                                                    |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| org          | <s TAB                                      | org-mode         | #+BEGIN_SRC ... #+END_SRC                                                       |
+|              | <e TAB                                      |                  | #+BEGIN_EXAMPLE ... #+END_EXAMPLE                                               |
+|              | <q TAB                                      |                  | #+BEGIN_QUOTE ... #+END_QUOTE                                                   |
+|              | <v TAB                                      |                  | #+BEGIN_VERSE ... #+END_VERSE                                                   |
+|              | <c TAB                                      |                  | #+BEGIN_CENTER ... #+END_CENTER                                                 |
+|              | <C TAB                                      |                  | #+BEGIN_COMMENT ... #+END_COMMENT                                               |
+|              | <l TAB                                      |                  | #+BEGIN_EXPORT latex ... #+END_EXPORT                                           |
+|              | <L TAB                                      |                  | #+LATEX:                                                                        |
+|              | <h TAB                                      |                  | #+BEGIN_EXPORT html ... #+END_EXPORT                                            |
+|              | <H TAB                                      |                  | #+HTML:                                                                         |
+|              | <a TAB                                      |                  | #+BEGIN_EXPORT ascii ... #+END_EXPORT                                           |
+|              | <A TAB                                      |                  | #+ASCII:                                                                        |
+|              | <i TAB                                      |                  | #+INDEX: line                                                                   |
+|              | <I TAB                                      |                  | #+INCLUDE: line                                                                 |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+| magit        | [P] C-x g                                   |                  | To display information about the current Git repository                         |
+|              |                                             |                  |                                                                                 |
+|--------------+---------------------------------------------+------------------+---------------------------------------------------------------------------------|
+
