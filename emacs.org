@@ -87,6 +87,22 @@
 | ggtags       | M-.                                         |                  | To find the tag at point. Jump to function definition.                                                                           |
 |              | M-i                                         |                  | Grep for all occurrences.                                                                                                        |
 |--------------+---------------------------------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------|
+| dumb-jump    | [P] M-g j                                   |                  | Attempts to jump to the definition for the thing under point.                                                                    |
+|              | [P] M-g o                                   |                  | Exactly like dumb-jump-go but uses find-file-other-window instead of find-file.                                                  |
+|              | [P] M-g x                                   |                  | Like dumb-jump-go but will prefer definitions not in the current buffer.                                                         |
+|              | [P] M-g z                                   |                  | Expected combination of dumb-jump-go-prefer-external and dumb-jump-go-other-window.                                              |
+|--------------+---------------------------------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------|
+| ibuffer      | [P] C-x C-b                                 |                  | Open ibuffer                                                                                                                     |
+|--------------+---------------------------------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------|
+| wgrep        | C-c C-p                                     | grep-mode        | Enter wgrep mode in grep buffer                                                                                                  |
+|              | C-c C-p                                     |                  | Apply the changes to file buffers.                                                                                               |
+|              | C-c C-u                                     |                  | All changes are unmarked and ignored.                                                                                            |
+|              | C-c C-d                                     |                  | Mark as delete to current line (including newline).                                                                              |
+|              | C-c C-r                                     |                  | Remove the changes in the region                                                                                                 |
+|              | C-c C-p                                     |                  | Toggle read-only area.                                                                                                           |
+|              | C-c C-k                                     |                  | Discard all changes and exit.                                                                                                    |
+|              | C-x C-q                                     |                  | Exit wgrep mode.                                                                                                                 |
+|--------------+---------------------------------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------|
 |              |                                             |                  |                                                                                                                                  |
 |--------------+---------------------------------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------|
 
