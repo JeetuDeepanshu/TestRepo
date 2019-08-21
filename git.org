@@ -1,105 +1,108 @@
 * Check if Git has already been installed
-- git --version
+git --version
 * Install if not installed
 ** Add your Git username and set your email
-- git config --global user.name "YOUR_USERNAME"
-- git config --global user.name
-- git config --global user.email "your_email_address@example.com"
-- git config --global user.email
+git config --global user.name "YOUR_USERNAME"
+git config --global user.name
+git config --global user.email "your_email_address@example.com"
+git config --global user.email
 ** Check your information
-- git config --global --list
+git config --global --list
 * Add an SSH key to your github account
 ** Check for existing SSH key
-- Open Terminal.
-- Enter ls -al ~/.ssh to see if existing SSH keys are present:
-  - $ ls -al ~/.ssh
-  - # Lists the files in your .ssh directory, if they exist
-- Check the directory listing to see if you already have a public SSH key. File with pub extension
+Open Terminal.
+Enter ls -al ~/.ssh to see if existing SSH keys are present:
+  $ ls -al ~/.ssh
+  # Lists the files in your .ssh directory, if they exist
+Check the directory listing to see if you already have a public SSH key. File with pub extension
 * If you don't have an existing public and private key pair, or don't wish to use any that are available to connect to GitHub, then generate a new SSH key.
 ** Generating a new SSH key
-- Open Terminal.
-- Paste the text below, substituting in your GitHub email address.
-  - $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-- This creates a new ssh key, using the provided email as a label.
-- Generating public/private rsa key pair.
-- When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
-  - Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
-- At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases".
-  - Enter passphrase (empty for no passphrase): [Type a passphrase]
-  - Enter same passphrase again: [Type passphrase again]
+Open Terminal.
+Paste the text below, substituting in your GitHub email address.
+  $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+This creates a new ssh key, using the provided email as a label.
+Generating public/private rsa key pair.
+When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
+  Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
+At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases".
+  Enter passphrase (empty for no passphrase): [Type a passphrase]
+  Enter same passphrase again: [Type passphrase again]
 ** Adding your SSH key to the ssh-agent
-- Start the ssh-agent in the background.
-  - $ eval "$(ssh-agent -s)"
-  - Agent pid 59566
-- If you're using macOS Sierra 10.12.2 or later, you will need to modify your ~/.ssh/config file to automatically load keys into the ssh-agent and store passphrases in your keychain.
-  - Host *
-  -    AddKeysToAgent yes
-  -    UseKeychain yes
-  -    IdentityFile ~/.ssh/id_rsa
-- Add your SSH private key to the ssh-agent and store your passphrase in the keychain. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_rsa in the command with the name of your private key file.
-  - $ ssh-add -K ~/.ssh/id_rsa
+Start the ssh-agent in the background.
+  $ eval "$(ssh-agent -s)"
+  Agent pid 59566
+If you're using macOS Sierra 10.12.2 or later, you will need to modify your ~/.ssh/config file to automatically load keys into the ssh-agent and store passphrases in your keychain.
+  Host *
+     AddKeysToAgent yes
+     UseKeychain yes
+     IdentityFile ~/.ssh/id_rsa
+Add your SSH private key to the ssh-agent and store your passphrase in the keychain. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_rsa in the command with the name of your private key file.
+  $ ssh-add -K ~/.ssh/id_rsa
 * Add the SSH key to your GitHub account.
-- Copy the SSH key to your clipboard.
-  - $ pbcopy < ~/.ssh/id_rsa.pub
-  - # Copies the contents of the id_rsa.pub file to your clipboard
-- In the upper-right corner of any page, click your profile photo, then click Settings. 
-- In the user settings sidebar, click SSH and GPG keys. 
-- Click New SSH key or Add SSH key.
-- In the "Title" field, add a descriptive label for the new key.
-- Paste your key into the "Key" field. 
-- Click Add SSH key.
+Copy the SSH key to your clipboard.
+  $ pbcopy < ~/.ssh/id_rsa.pub
+  # Copies the contents of the id_rsa.pub file to your clipboard
+In the upper-right corner of any page, click your profile photo, then click Settings. 
+In the user settings sidebar, click SSH and GPG keys. 
+Click New SSH key or Add SSH key.
+In the "Title" field, add a descriptive label for the new key.
+Paste your key into the "Key" field. 
+Click Add SSH key.
 * Initialize a local directory for Git version control
-- git init
-  - This creates a .git directory that contains the Git configuration files.
-  - Once the directory has been initialized, you can add a remote repository and send changes to GitLab.com.
-  - You will also need to create a new project in GitLab for your Git repository.
+git init
+  This creates a .git directory that contains the Git configuration files.
+  Once the directory has been initialized, you can add a remote repository and send changes to GitLab.com.
+  You will also need to create a new project in GitLab for your Git repository.
 * Clone a repository
-- git clone <repository path>
-  - You can either clone it via HTTPS or SSH.
-  - If you chose to clone it via HTTPS, you’ll have to enter your credentials every time you pull and push.
-  - With SSH, you enter your credentials only once.
-  - Example:
-    - HTTPS: https://gitlab.com/gitlab-org/gitlab-ce.git
-    - SSH: git@gitlab.com:gitlab-org/gitlab-ce.git
+git clone <repository path>
+  You can either clone it via HTTPS or SSH.
+  If you chose to clone it via HTTPS, you’ll have to enter your credentials every time you pull and push.
+  With SSH, you enter your credentials only once.
+  Example:
+    HTTPS: https://gitlab.com/gitlab-org/gitlab-ce.git
+    SSH: git@gitlab.com:gitlab-org/gitlab-ce.git
 * Switch to the master branch
-- git checkout master
+git checkout master
 * Download the latest changes in the project
-- git pull REMOTE <name-of-branch>
+git pull REMOTE <name-of-branch>
 * View your remote repositories
-- git remote -v
+git remote -v
 * Add a remote repository
-- git remote add <source-name> <repository-path>
+git remote add <source-name> <repository-path>
 * Create a branch
-- git checkout -b <name-of-branch>>
+git checkout -b <name-of-branch>>
 * Work on existing branch
-- git checkout <name-of-branch>
+git checkout <name-of-branch>
 * View the changes you've made
-- git status
+git status
 * View differences
-- git diff
+git diff
 * Add and commit local changes
-- git add <file-name OR folder-name>
-- git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT
+git add <file-name OR folder-name>
+git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT
 * Add all changes to commit
-- git add .
-- git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"
+git add .
+git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"
 * Send changes to GITLAB.com
-- git push <remote> <name-of-branch>
+git push <remote> <name-of-branch>
 * Delete all changes in the branch
-- git checkout .
+git checkout .
 * Unstage all changes that have been added to the staging area
-- git reset .
+git reset .
 * Undo most recent commit
-- git reset HEAD~1
+git reset HEAD~1
 * Merge a branch with master branch
-- git checkout <name-of-branch>
-- git merge master
+git checkout <name-of-branch>
+git merge master
 * Update a commited change 
-- Go to commit which needs to be updated
-  - git rebase -i <commit id>^
-  - git rebase -i HEAD~<number of commits>
-- Edit the commit from 'pick' to 'edit'
-- git commit --amend
-  - Make the changes.
-- git rebase --continue
+Go to commit which needs to be updated
+  git rebase -i <commit id>^
+  git rebase -i HEAD~<number of commits>
+Edit the commit from 'pick' to 'edit'
+git commit --amend
+  Make the changes.
+git rebase --continue
+* Move/Rename a file
+git mv <file> <newname>
+git mv <file> <newname with path>
 
