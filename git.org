@@ -1,7 +1,5 @@
 * Check if Git has already been installed
-#+begin_src 
-git --version
-#+end_src
+`git --version`
 git --version
 * Install if not installed
 ** Add your Git username and set your email
